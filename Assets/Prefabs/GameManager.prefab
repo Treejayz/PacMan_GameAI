@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4512189312990252}
   - component: {fileID: 114110377736213598}
+  - component: {fileID: 114413333616901114}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -68,3 +69,15 @@ MonoBehaviour:
   inky: {fileID: 1093140176201252, guid: b3f261743b6452f4680d92a09aeb17e8, type: 2}
   clyde: {fileID: 1225471690446594, guid: b1738a51ae52d434f9bb1cb7524adae6, type: 2}
   cam: {fileID: 0}
+  Map: []
+--- !u!114 &114413333616901114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063163246594244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b3c1ba80d5ae24fb4bc12bdfa32070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
