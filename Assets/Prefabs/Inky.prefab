@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4690116768610064}
   - component: {fileID: 212783126101630772}
   - component: {fileID: 95938961667904800}
+  - component: {fileID: 114707043562915916}
+  - component: {fileID: 114364400385463786}
   m_Layer: 0
   m_Name: Inky
   m_TagString: Untagged
@@ -59,6 +61,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114364400385463786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1093140176201252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39120f6cb73c45143a6ada3dfc2324fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirs: 00000000
+  releaseTime: 4
+  waitTime: 0
+  range: 0
+  chooseDirection: 1
+  choices: 
+  choice: 0
+  _state: 0
+--- !u!114 &114707043562915916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1093140176201252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00390da3fe41c5a48af87efb19b0a268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputMap: {fileID: 4900000, guid: 882aac35b5fc6df4eb8dc93303a13f6f, type: 3}
+  Map: []
+  _dir: 0
+  MSpeed: 5
 --- !u!212 &212783126101630772
 SpriteRenderer:
   m_ObjectHideFlags: 1

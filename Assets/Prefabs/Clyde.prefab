@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4197750707247472}
   - component: {fileID: 212854612762453178}
   - component: {fileID: 95108162356333526}
+  - component: {fileID: 114019861887486414}
+  - component: {fileID: 114307779551628464}
   m_Layer: 0
   m_Name: Clyde
   m_TagString: Untagged
@@ -59,6 +61,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114019861887486414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225471690446594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00390da3fe41c5a48af87efb19b0a268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputMap: {fileID: 4900000, guid: 882aac35b5fc6df4eb8dc93303a13f6f, type: 3}
+  Map: []
+  _dir: 0
+  MSpeed: 5
+--- !u!114 &114307779551628464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225471690446594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39120f6cb73c45143a6ada3dfc2324fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirs: 00000000
+  releaseTime: 8
+  waitTime: 0
+  range: 0
+  chooseDirection: 1
+  choices: 
+  choice: 0
+  _state: 0
 --- !u!212 &212854612762453178
 SpriteRenderer:
   m_ObjectHideFlags: 1

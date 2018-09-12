@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4227679380394112}
   - component: {fileID: 212016835542808640}
   - component: {fileID: 95689218350618368}
+  - component: {fileID: 114198521745478824}
+  - component: {fileID: 114410652633643712}
   m_Layer: 0
   m_Name: Pinky
   m_TagString: Untagged
@@ -59,6 +61,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114198521745478824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1371204068546360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00390da3fe41c5a48af87efb19b0a268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputMap: {fileID: 4900000, guid: 882aac35b5fc6df4eb8dc93303a13f6f, type: 3}
+  Map: []
+  _dir: 0
+  MSpeed: 5
+--- !u!114 &114410652633643712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1371204068546360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39120f6cb73c45143a6ada3dfc2324fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirs: 00000000
+  releaseTime: 2
+  waitTime: 0
+  range: 0
+  chooseDirection: 1
+  choices: 
+  choice: 0
+  _state: 0
 --- !u!212 &212016835542808640
 SpriteRenderer:
   m_ObjectHideFlags: 1
