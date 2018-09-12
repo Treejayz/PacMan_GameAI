@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class pelletCollision : MonoBehaviour {
 
@@ -12,13 +13,21 @@ public class pelletCollision : MonoBehaviour {
         gameManager = GameObject.Find("GameManager");
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+		if (collision.tag == "pellet") {
+			Destroy (collision.gameObject);
+			gameManager.SendMessage("updateScore");
+		}
+		/*
         if(collision.collider.gameObject.name == "Pellet(Clone)")
         {
             Destroy(collision.collider.gameObject);
             gameManager.SendMessage("updateScore");
-        }
+        }*/
+		if (collision.CompareTag ("ghost")) {
+			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+		}
     }
 
 

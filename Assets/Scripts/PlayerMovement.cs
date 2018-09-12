@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		move = GetComponent<Movement> ();
+
 	}
 	
 	// Update is called once per frame
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour {
 
 			if (move.checkDirectionClear (new Vector2(0,1))) {
 				move._dir = Movement.Direction.up;
+				transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 90f));
 			} else {
 				move._dir = Movement.Direction.still;
 			}
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour {
 
 			if (move.checkDirectionClear (new Vector2(1,0))) {
 				move._dir = Movement.Direction.right;
+				transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0f));
 			} else {
 				move._dir = Movement.Direction.still;
 			}
@@ -34,6 +37,7 @@ public class PlayerMovement : MonoBehaviour {
 
 			if (move.checkDirectionClear (new Vector2(0,-1))) {
 				move._dir = Movement.Direction.down;
+				transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 270f));
 			} else {
 				move._dir = Movement.Direction.still;
 			}
@@ -42,6 +46,7 @@ public class PlayerMovement : MonoBehaviour {
 
 			if (move.checkDirectionClear (new Vector2(-1,0))) {
 				move._dir = Movement.Direction.left;
+				transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 180f));
 			} else {
 				move._dir = Movement.Direction.still;
 			}

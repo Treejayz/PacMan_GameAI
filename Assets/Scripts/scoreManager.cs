@@ -32,6 +32,8 @@ public class scoreManager : MonoBehaviour {
     {
         score += 1;
         scoreText.text = "Score" + '\n' + string.Format("{0:0\n0\n0\n0\n0}", score);
+
+
     }
 
     private void OnDestroy()

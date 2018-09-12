@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GhostAI : MonoBehaviour {
 
+
+
+
 	Movement move;
 	public bool[] dirs = new bool[4];
 	private bool[] prevDirs = new bool[4];
@@ -28,6 +31,7 @@ public class GhostAI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		move = GetComponent<Movement> ();
+
 	}
 	
 	// Update is called once per frame
@@ -44,9 +48,9 @@ public class GhostAI : MonoBehaviour {
 
 		case(State.leaving):
 			if (transform.position.x < 13.49f || transform.position.x > 13.51) {
-				transform.position = Vector3.Lerp (transform.position, new Vector3 (13.5f, transform.position.y, transform.position.z), 1f * Time.deltaTime);
+				transform.position = Vector3.Lerp (transform.position, new Vector3 (13.5f, transform.position.y, transform.position.z), 3f * Time.deltaTime);
 			} else if (transform.position.y < -11.01f || transform.position.y > -10.99f) {
-				transform.position = Vector3.Lerp (transform.position, new Vector3 (transform.position.x, -11f, transform.position.z), 1f * Time.deltaTime);
+				transform.position = Vector3.Lerp (transform.position, new Vector3 (transform.position.x, -11f, transform.position.z), 3f * Time.deltaTime);
 			} else {
 				_state = State.active;
 			}
@@ -68,7 +72,7 @@ public class GhostAI : MonoBehaviour {
 				range = 0;
 				for (int i = 0; i < dirs.Length; i++) {
 					if (dirs [i]) {
-						print (i + " is " + dirs [i]);
+						//print (i + " is " + dirs [i]);
 						choices[range] = i;
 						range++;
 					}

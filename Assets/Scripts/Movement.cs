@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
+	Animator animator;
+
 	public enum Direction{
 		still,
 		up,
@@ -29,6 +31,7 @@ public class Movement : MonoBehaviour {
 		string text = inputMap.text;
 		string[] lines = text.Split('\n');
 		Map = lines;
+		animator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -39,15 +42,19 @@ public class Movement : MonoBehaviour {
 
 			break;
 		case Direction.down:
+			animator.SetInteger ("Direction", 2);
 			direc = down;
 			break;
 		case Direction.up:
+			animator.SetInteger ("Direction", 0);
 			direc = up;
 			break;
 		case Direction.left:
+			animator.SetInteger ("Direction", 3);
 			direc = left;
 			break;
 		case Direction.right:
+			animator.SetInteger ("Direction", 1);
 			direc = right;
 			break;
 
