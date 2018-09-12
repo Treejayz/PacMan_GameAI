@@ -14,24 +14,32 @@ public class scoreManager : MonoBehaviour {
     {
         score = 0;
         scoreText = GameObject.Find("Score").GetComponent<Text>();
-        scoreText.text = ("Game"+'\n' + "Score" + '\n' + string.Format("{0:0\n0\n0\n0\n0}", score));
+        scoreText.text = ("Game"+'\n' + "Score" + '\n' + string.Format("{0:0\n0\n0\n0}", score));
         
         highText = GameObject.Find("HighScore").GetComponent<Text>();
         if (PlayerPrefs.HasKey("highscore"))
         {
             highscore = PlayerPrefs.GetInt("highscore");
+
         }
         else
         {
             highscore = 0;
         }
-        highText.text = "High"+"\n"+"Score" + '\n' + string.Format("{0:0\n0\n0\n0\n0}", highscore);
+        highText.text = "High"+"\n"+"Score" + '\n' + string.Format("{0:0\n0\n0\n0}", highscore);
     }
 	
 	public void updateScore()
     {
         score += 1;
-        scoreText.text = "Score" + '\n' + string.Format("{0:0\n0\n0\n0\n0}", score);
+		scoreText.text = "Game"+'\n' + "Score" + '\n' + string.Format("{0:0\n0\n0\n0}", score);
+		if(score > highscore)
+		{
+			highscore = score;
+			PlayerPrefs.SetInt("highscore", score);
+			PlayerPrefs.Save();
+		}
+		highText.text = "High"+"\n"+"Score" + '\n' + string.Format("{0:0\n0\n0\n0}", highscore);
 
 
     }
