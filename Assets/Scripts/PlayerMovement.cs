@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -14,6 +17,11 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetKey (KeyCode.R)) {
+			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+		}
+
 		if (Input.GetAxisRaw ("Vertical") > 0) {
 			//move.move (new Vector2(0,1));
 
