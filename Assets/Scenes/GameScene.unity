@@ -922,6 +922,12 @@ Prefab:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 114110377736213598, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: powerPellet
+      value: 
+      objectReference: {fileID: 1340717961319834, guid: 8bd80dbbd7ecce64b9d18b098f6a488c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faa292d99ab34b546901d93ebf7200fe, type: 2}
   m_IsPrefabAsset: 0

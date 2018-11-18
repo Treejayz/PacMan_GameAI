@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pellet
   - ghost
+  - powerpellet
   layers:
   - Default
   - TransparentFX

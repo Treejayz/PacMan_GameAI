@@ -20,6 +20,7 @@ public class MazeCreator : MonoBehaviour {
     /// 
     /// - = Wall
     /// . = Pellet
+    /// + = Power Pellet
     /// # = Gate (The gate for the ghost area, which ghosts can pass through but pacman can't)
     ///   = empty space (which both the ghosts and the player can navigate
     /// ~ = 'Ghost' space (Empty space in the ghost starting area. Treated as walls, but seperate for maze layout purposes)
@@ -40,6 +41,7 @@ public class MazeCreator : MonoBehaviour {
     public GameObject corner5;
     public GameObject gate;
     public GameObject pellet;
+    public GameObject powerPellet;
     public GameObject pacman;
     public GameObject blinky;
     public GameObject pinky;
@@ -112,6 +114,12 @@ public class MazeCreator : MonoBehaviour {
                 else if (lines[i][j] == '.')
                 {
                     Instantiate(pellet, new Vector3(j, -1 * i, -1), Quaternion.identity);
+                }
+
+                ///  Power Pellets  ///
+                else if (lines[i][j] == '+')
+                {
+                    Instantiate(powerPellet, new Vector3(j, -1 * i, -1), Quaternion.identity);
                 }
 
                 ///  Gate  ///

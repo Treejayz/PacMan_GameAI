@@ -19,13 +19,19 @@ public class pelletCollision : MonoBehaviour {
 			Destroy (collision.gameObject);
 			gameManager.SendMessage("updateScore");
 		}
-		/*
+
+        if (collision.tag == "powerpellet")
+        {
+            Destroy(collision.gameObject);
+            gameManager.SendMessage("updateScore");
+        }
+        /*
         if(collision.collider.gameObject.name == "Pellet(Clone)")
         {
             Destroy(collision.collider.gameObject);
             gameManager.SendMessage("updateScore");
         }*/
-		if (collision.CompareTag ("ghost")) {
+        if (collision.CompareTag ("ghost")) {
 			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 		}
     }
