@@ -24,6 +24,10 @@ public class pelletCollision : MonoBehaviour {
         {
             Destroy(collision.gameObject);
             gameManager.SendMessage("updateState");
+            for(int i = 0; i < 5; i++)
+            {
+                gameManager.SendMessage("updateScore");
+            }
 
             //set ghosts to flee. 
         }
