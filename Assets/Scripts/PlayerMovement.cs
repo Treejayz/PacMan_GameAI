@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.R)) {
 			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1f;
 		}
 
 		if (Input.GetAxisRaw ("Vertical") > 0) {

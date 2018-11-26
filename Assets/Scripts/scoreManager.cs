@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class scoreManager : MonoBehaviour {
 
+    public GameObject gameOver;
     public GameObject[] liveSprite;
     public GameObject inky;
     public GameObject clyde;
@@ -123,6 +124,8 @@ public class scoreManager : MonoBehaviour {
             if (lives == -1)
             {
                 //game over motherfucker.
+                Time.timeScale = 0f;
+                gameOver.SetActive(true);
             }
         }
         else
@@ -167,7 +170,7 @@ public class scoreManager : MonoBehaviour {
 
     public void updateState()
     {
-        powerPellet = !powerPellet;
+        powerPellet = true;
     }
 
     private void OnDestroy()

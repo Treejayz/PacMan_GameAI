@@ -44,18 +44,13 @@ public class pelletCollision : MonoBehaviour {
 
             //set ghosts to flee. 
         }
-        /*
-        if(collision.collider.gameObject.name == "Pellet(Clone)")
-        {
-            Destroy(collision.collider.gameObject);
-            gameManager.SendMessage("updateScore");
-        }*/
+        
+
         if (collision.CompareTag ("ghost")) {
             gameManager.SendMessage("updateLives");
 
             if (gameManager.GetComponent<scoreManager>().powerPellet)
             {
-                //turn ghost into eyes
                 collision.GetComponent<Animator>().SetBool("Dead", true);
 
                 //set state to path find back to start
