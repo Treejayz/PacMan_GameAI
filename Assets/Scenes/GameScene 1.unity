@@ -933,6 +933,36 @@ Prefab:
       propertyPath: inputMap
       value: 
       objectReference: {fileID: 4900000, guid: 4ed415d2eb0cb214da080e0debbe6034, type: 3}
+    - target: {fileID: 114110377736213598, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: blinky
+      value: 
+      objectReference: {fileID: 1123822669406840, guid: fe5359baf78cfc84bb05a6eab2c363b8,
+        type: 2}
+    - target: {fileID: 114110377736213598, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: inky
+      value: 
+      objectReference: {fileID: 1093140176201252, guid: 277148fe65574544e8bf7c14ffd54c31,
+        type: 2}
+    - target: {fileID: 114110377736213598, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: pinky
+      value: 
+      objectReference: {fileID: 1371204068546360, guid: 0590a41b86b7e594fa6e7f4d35bab4bc,
+        type: 2}
+    - target: {fileID: 114110377736213598, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: clyde
+      value: 
+      objectReference: {fileID: 1225471690446594, guid: d0e0b5da7f3288a4996a72c49f013885,
+        type: 2}
+    - target: {fileID: 114110377736213598, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: pacman
+      value: 
+      objectReference: {fileID: 1493566779631544, guid: 336d5cc7ac547e445b06943e19f49edc,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faa292d99ab34b546901d93ebf7200fe, type: 2}
   m_IsPrefabAsset: 0
