@@ -885,6 +885,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114413333616901114, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: liveSprite.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4512189312990252, guid: faa292d99ab34b546901d93ebf7200fe, type: 2}
       propertyPath: m_LocalPosition.x
       value: 6.1715794
@@ -928,6 +933,31 @@ Prefab:
       value: 
       objectReference: {fileID: 1340717961319834, guid: 8bd80dbbd7ecce64b9d18b098f6a488c,
         type: 2}
+    - target: {fileID: 114413333616901114, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: liveSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 1381166335}
+    - target: {fileID: 114413333616901114, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: liveSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 1623773393}
+    - target: {fileID: 114413333616901114, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: liveSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 1744057920}
+    - target: {fileID: 114413333616901114, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: liveSprite.Array.data[3]
+      value: 
+      objectReference: {fileID: 293645145}
+    - target: {fileID: 114413333616901114, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: liveSprite.Array.data[4]
+      value: 
+      objectReference: {fileID: 2114382979}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faa292d99ab34b546901d93ebf7200fe, type: 2}
   m_IsPrefabAsset: 0

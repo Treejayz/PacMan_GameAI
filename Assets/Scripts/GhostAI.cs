@@ -8,6 +8,7 @@ public class GhostAI : MonoBehaviour {
 
 
 	Movement move;
+    public Vector3 startPos;
 	public bool[] dirs = new bool[4];
 	private bool[] prevDirs = new bool[4];
 	public float releaseTime = 0f;
@@ -28,8 +29,12 @@ public class GhostAI : MonoBehaviour {
 
 	public State _state = State.waiting;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    private void Awake()
+    {
+        startPos = this.gameObject.transform.position;
+    }
+    void Start () {
 		move = GetComponent<Movement> ();
 
 	}

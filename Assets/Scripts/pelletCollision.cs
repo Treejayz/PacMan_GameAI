@@ -23,7 +23,9 @@ public class pelletCollision : MonoBehaviour {
         if (collision.tag == "powerpellet")
         {
             Destroy(collision.gameObject);
-            gameManager.SendMessage("updateScore");
+            gameManager.SendMessage("updateState");
+
+            //set ghosts to flee. 
         }
         /*
         if(collision.collider.gameObject.name == "Pellet(Clone)")
@@ -32,7 +34,13 @@ public class pelletCollision : MonoBehaviour {
             gameManager.SendMessage("updateScore");
         }*/
         if (collision.CompareTag ("ghost")) {
-			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+            gameManager.SendMessage("updateLives");
+
+            if (gameManager.GetComponent<scoreManager>().powerPellet)
+            {
+                //turn ghost into eyes
+                //set state to path find back to start
+            }
 		}
     }
 
