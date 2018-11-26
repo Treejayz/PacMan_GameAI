@@ -20,6 +20,7 @@ public class scoreManager : MonoBehaviour {
     public bool powerPellet = false;
     private int ghostCount = 0;
     private float timer = 9f;
+    private bool blinking = false;
 	// Use this for initialization
 	void Start ()
     {
@@ -52,11 +53,34 @@ public class scoreManager : MonoBehaviour {
     {
         if (powerPellet)
         {
+            if(timer <= 3f && !blinking)
+            {
+                blinking = true;
+                inky.GetComponent<Animator>().SetBool("Flicker", true);
+                blinky.GetComponent<Animator>().SetBool("Flicker", true);
+                pinky.GetComponent<Animator>().SetBool("Flicker", true);
+                clyde.GetComponent<Animator>().SetBool("Flicker", true);
+
+                
+
+                
+            }
             if(timer <= 0f)
             {
                 powerPellet = false;
                 timer = 9f;
                 ghostCount = 0;
+                blinking = false;
+
+                clyde.GetComponent<Animator>().SetBool("Running", false);
+                pinky.GetComponent<Animator>().SetBool("Running", false);
+                inky.GetComponent<Animator>().SetBool("Running", false);
+                blinky.GetComponent<Animator>().SetBool("Running", false);
+
+                inky.GetComponent<Animator>().SetBool("Flicker", false);
+                blinky.GetComponent<Animator>().SetBool("Flicker", false);
+                pinky.GetComponent<Animator>().SetBool("Flicker", false);
+                clyde.GetComponent<Animator>().SetBool("Flicker", false);
                 //set all ghosts back to pursue.
             }
             else

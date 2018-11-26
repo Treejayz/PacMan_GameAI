@@ -6,11 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class pelletCollision : MonoBehaviour {
 
+    public GameObject clyde;
+    public GameObject pinky;
+    public GameObject blinky;
+    public GameObject inky; 
+
     private GameObject gameManager;
 
     private void Start()
     {
         gameManager = GameObject.Find("GameManager");
+        clyde = GameObject.Find("Clyde(Clone)");
+        pinky = GameObject.Find("Pinky(Clone)");
+        inky = GameObject.Find("Inky(Clone)");
+        blinky = GameObject.Find("Blinky(Clone)");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +37,10 @@ public class pelletCollision : MonoBehaviour {
             {
                 gameManager.SendMessage("updateScore");
             }
+            clyde.GetComponent<Animator>().SetBool("Running", true);
+            pinky.GetComponent<Animator>().SetBool("Running", true);
+            inky.GetComponent<Animator>().SetBool("Running", true);
+            blinky.GetComponent<Animator>().SetBool("Running", true);
 
             //set ghosts to flee. 
         }
@@ -43,9 +56,11 @@ public class pelletCollision : MonoBehaviour {
             if (gameManager.GetComponent<scoreManager>().powerPellet)
             {
                 //turn ghost into eyes
+                collision.GetComponent<Animator>().SetBool("Dead", true);
+
                 //set state to path find back to start
             }
-		}
+        }
     }
 
 
