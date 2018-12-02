@@ -63,6 +63,8 @@ MonoBehaviour:
   corner5: {fileID: 1680346924115422, guid: 9eee1125492f81b4eb8f694e7793a61a, type: 2}
   gate: {fileID: 1396589087261704, guid: 8418eff7c6818f84d8edf79e92011a1f, type: 2}
   pellet: {fileID: 1969203054275582, guid: ad0589de94761a9489f2c29079fc9bc2, type: 2}
+  powerPellet: {fileID: 1340717961319834, guid: 8bd80dbbd7ecce64b9d18b098f6a488c,
+    type: 2}
   pacman: {fileID: 1493566779631544, guid: be5bc78173e167448a4ad44a26837b95, type: 2}
   blinky: {fileID: 1123822669406840, guid: a581e682e27529c43b1e1841b1ff7a60, type: 2}
   pinky: {fileID: 1371204068546360, guid: b1c04bba5a4284e41bc5bd9828eb5ffd, type: 2}
@@ -81,3 +83,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b3c1ba80d5ae24fb4bc12bdfa32070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: {fileID: 0}
+  liveSprite:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  inky: {fileID: 0}
+  clyde: {fileID: 0}
+  pinky: {fileID: 0}
+  blinky: {fileID: 0}
+  powerPellet: 0

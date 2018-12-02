@@ -88,10 +88,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39120f6cb73c45143a6ada3dfc2324fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 0, z: 0}
   dirs: 00000000
   releaseTime: 4
   waitTime: 0
   range: 0
+  dead: 0
+  fleeing: 0
+  D: 2.22
+  distx: 0
+  disty: 0
+  directions:
+  - 0
+  - 0
+  - 0
+  - 0
+  prevChoices: 01000000010000000100000001000000
+  target: {fileID: 0}
   chooseDirection: 1
   choices: 
   choice: 0

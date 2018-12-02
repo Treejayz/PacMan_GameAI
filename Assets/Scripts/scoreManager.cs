@@ -44,28 +44,33 @@ public class scoreManager : MonoBehaviour {
         highText.text = "High"+"\n"+"Score" + '\n' + string.Format("{0:0\n0\n0\n0}", highscore);
 
 
-        inky = GameObject.Find("Inky(Clone)");
-        blinky = GameObject.Find("Blinky(Clone)");
-        pinky = GameObject.Find("Pinky(Clone)");
-        clyde = GameObject.Find("Clyde(Clone)");
+		clyde = GameObject.Find("Clyde(Clone)") ? GameObject.Find("Clyde(Clone)") : GameObject.Find("Clyde 1(Clone)");
+		pinky = GameObject.Find("Pinky(Clone)") ? GameObject.Find("Pinky(Clone)"): GameObject.Find("Pinky 1(Clone)");
+		inky = GameObject.Find("Inky(Clone)") ? GameObject.Find("Inky(Clone)"): GameObject.Find("Inky 1(Clone)");
+		blinky = GameObject.Find("Blinky(Clone)") ? GameObject.Find("Blinky(Clone)"): GameObject.Find("Blinky 1(Clone)");
     }
 
     private void Update()
     {
         if (powerPellet)
         {
-            if(timer <= 3f && !blinking)
-            {
-                blinking = true;
-                inky.GetComponent<Animator>().SetBool("Flicker", true);
-                blinky.GetComponent<Animator>().SetBool("Flicker", true);
-                pinky.GetComponent<Animator>().SetBool("Flicker", true);
-                clyde.GetComponent<Animator>().SetBool("Flicker", true);
+			if (timer <= 3f && !blinking) {
+				blinking = true;
+				inky.GetComponent<Animator> ().SetBool ("Flicker", true);
+				blinky.GetComponent<Animator> ().SetBool ("Flicker", true);
+				pinky.GetComponent<Animator> ().SetBool ("Flicker", true);
+				clyde.GetComponent<Animator> ().SetBool ("Flicker", true);
 
                 
 
                 
-            }
+			} else if(timer > 3f){
+				blinking = false;
+				inky.GetComponent<Animator> ().SetBool ("Flicker", false);
+				blinky.GetComponent<Animator> ().SetBool ("Flicker", false);
+				pinky.GetComponent<Animator> ().SetBool ("Flicker", false);
+				clyde.GetComponent<Animator> ().SetBool ("Flicker", false);
+			}
             if(timer <= 0f)
             {
                 powerPellet = false;
@@ -83,6 +88,24 @@ public class scoreManager : MonoBehaviour {
                 pinky.GetComponent<Animator>().SetBool("Flicker", false);
                 clyde.GetComponent<Animator>().SetBool("Flicker", false);
                 //set all ghosts back to pursue.
+
+				clyde.GetComponent<GhostAI>().fleeing = false;
+				pinky.GetComponent<GhostAI>().fleeing = false;
+				inky.GetComponent<GhostAI>().fleeing = false;
+				blinky.GetComponent<GhostAI>().fleeing = false;
+
+				if (!clyde.GetComponent<GhostAI> ().dead) {
+					clyde.GetComponent<Movement> ().MSpeed = 5f;
+				}
+				if (!pinky.GetComponent<GhostAI> ().dead) {
+					pinky.GetComponent<Movement> ().MSpeed = 5f;
+				}
+				if (!inky.GetComponent<GhostAI> ().dead) {
+					inky.GetComponent<Movement> ().MSpeed = 5f;
+				}
+				if (!blinky.GetComponent<GhostAI> ().dead) {
+					blinky.GetComponent<Movement> ().MSpeed = 5f;
+				}
             }
             else
             {
@@ -114,9 +137,9 @@ public class scoreManager : MonoBehaviour {
 
     }
 
-    public void updateLives()
+	public void updateLives(Collider2D collision)
     {
-        if (!powerPellet)
+		if (!collision.GetComponent<GhostAI>().fleeing)
         {
            
             liveSprite[lives].SetActive(false);
@@ -171,6 +194,7 @@ public class scoreManager : MonoBehaviour {
     public void updateState()
     {
         powerPellet = true;
+		timer = 9f;
     }
 
     private void OnDestroy()

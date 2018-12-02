@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour {
 	public float MSpeed = 2f;
 
 	private Vector2 direc= new Vector2(0f,0f);
+	private static Vector2 none= new Vector2(0f,0f);
 	private static Vector2 up = new Vector2(0f,1f);
 	private static Vector2 down = new Vector2(0f,-1f);
 	private static Vector2 right = new Vector2(1f,0f);
@@ -39,7 +40,7 @@ public class Movement : MonoBehaviour {
 
 		switch (_dir) {
 		case Direction.still:
-
+			direc = none;
 			break;
 		case Direction.down:
 			animator.SetInteger ("Direction", 2);

@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
 				move._dir = Movement.Direction.up;
 				transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 90f));
 			} else {
-				move._dir = Movement.Direction.still;
+				//move._dir = Movement.Direction.still;
 			}
 		} else if (Input.GetAxisRaw ("Horizontal") > 0) {
 			//move.move (new Vector2(1,0));
@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour {
 				move._dir = Movement.Direction.right;
 				transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0f));
 			} else {
-				move._dir = Movement.Direction.still;
+				//move._dir = Movement.Direction.still;
 			}
 		} else if (Input.GetAxisRaw ("Vertical") < 0) {
 			//move.move (new Vector2(0,-1));
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour {
 				move._dir = Movement.Direction.down;
 				transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 270f));
 			} else {
-				move._dir = Movement.Direction.still;
+				//move._dir = Movement.Direction.still;
 			}
 		} else if (Input.GetAxisRaw ("Horizontal") < 0) {
 			//move.move (new Vector2(-1,0));
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour {
 				move._dir = Movement.Direction.left;
 				transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 180f));
 			} else {
-				move._dir = Movement.Direction.still;
+				//move._dir = Movement.Direction.still;
 			}
 		} else {
 			//move._dir = Movement.Direction.still;

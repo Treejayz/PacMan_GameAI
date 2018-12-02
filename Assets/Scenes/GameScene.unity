@@ -856,7 +856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 234.99998, y: -423}
+  m_AnchoredPosition: {x: 235, y: -423}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1319152139
@@ -1107,11 +1107,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114413333616901114, guid: faa292d99ab34b546901d93ebf7200fe,
-        type: 2}
-      propertyPath: liveSprite.Array.size
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4512189312990252, guid: faa292d99ab34b546901d93ebf7200fe, type: 2}
       propertyPath: m_LocalPosition.x
       value: 6.1715794
@@ -1144,17 +1139,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114110377736213598, guid: faa292d99ab34b546901d93ebf7200fe,
+    - target: {fileID: 114413333616901114, guid: faa292d99ab34b546901d93ebf7200fe,
         type: 2}
-      propertyPath: cam
+      propertyPath: gameOver
       value: 
-      objectReference: {fileID: 519420028}
-    - target: {fileID: 114110377736213598, guid: faa292d99ab34b546901d93ebf7200fe,
-        type: 2}
-      propertyPath: powerPellet
-      value: 
-      objectReference: {fileID: 1340717961319834, guid: 8bd80dbbd7ecce64b9d18b098f6a488c,
-        type: 2}
+      objectReference: {fileID: 970619708}
     - target: {fileID: 114413333616901114, guid: faa292d99ab34b546901d93ebf7200fe,
         type: 2}
       propertyPath: liveSprite.Array.data[0]
@@ -1182,14 +1171,14 @@ Prefab:
       objectReference: {fileID: 2114382979}
     - target: {fileID: 114413333616901114, guid: faa292d99ab34b546901d93ebf7200fe,
         type: 2}
-      propertyPath: gameOver
-      value: 
-      objectReference: {fileID: 970619708}
-    - target: {fileID: 114413333616901114, guid: faa292d99ab34b546901d93ebf7200fe,
-        type: 2}
       propertyPath: liveSprite.Array.data[5]
       value: 
       objectReference: {fileID: 1319152137}
+    - target: {fileID: 114110377736213598, guid: faa292d99ab34b546901d93ebf7200fe,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420028}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faa292d99ab34b546901d93ebf7200fe, type: 2}
   m_IsPrefabAsset: 0
