@@ -12,6 +12,7 @@ public class GhostAI : MonoBehaviour {
 	public bool[] dirs = new bool[4];
 	private bool[] prevDirs = new bool[4];
 	public float releaseTime = 0f;
+	private float releaseTimeReset = 0f;
 	public float waitTime = 0f;
 	private const float ogWaitTime = .1f;
 	public int range = 0;
@@ -70,14 +71,21 @@ public class GhostAI : MonoBehaviour {
 		move = GetComponent<Movement> ();
 		gate = GameObject.Find("Gate(Clone)");
 		pacMan = GameObject.Find("PacMan(Clone)") ? GameObject.Find("PacMan(Clone)") : GameObject.Find("PacMan 1(Clone)");
+		releaseTimeReset = releaseTime;
 
+	}
 
+	public void restart(){
+		releaseTime = releaseTimeReset;
+		transform.position = startPos;
+		_state = State.waiting;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		switch (_state) {
 		case(State.waiting):
+			move._dir = Movement.Direction.still;
 			if (releaseTime <= 0f) {
 				chooseDirection = true;
 				gameObject.GetComponent<Animator>().SetBool("Dead", false);
@@ -99,6 +107,7 @@ public class GhostAI : MonoBehaviour {
 			gameObject.GetComponent<CircleCollider2D> ().enabled = true;
 			gameObject.GetComponent<Animator> ().SetBool ("Dead", false);
 			gameObject.GetComponent<Animator> ().SetBool ("Running", false);
+			gameObject.GetComponent<Movement> ().MSpeed = 5f;
 			fleeing = false;
 			dead = false;
 			if (transform.position.x < 13.49f || transform.position.x > 13.51) {

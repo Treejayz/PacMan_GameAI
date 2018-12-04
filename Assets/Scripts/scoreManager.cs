@@ -11,6 +11,7 @@ public class scoreManager : MonoBehaviour {
     public GameObject clyde;
     public GameObject pinky;
     public GameObject blinky;
+	public GameObject pacman;
     private Text scoreText;
     private Text highText; 
     private int score;
@@ -43,7 +44,7 @@ public class scoreManager : MonoBehaviour {
         }
         highText.text = "High"+"\n"+"Score" + '\n' + string.Format("{0:0\n0\n0\n0}", highscore);
 
-
+		pacman = GameObject.Find("PacMan(Clone)") ? GameObject.Find("PacMan(Clone)"): GameObject.Find("PacMan 1(Clone)");
 		clyde = GameObject.Find("Clyde(Clone)") ? GameObject.Find("Clyde(Clone)") : GameObject.Find("Clyde 1(Clone)");
 		pinky = GameObject.Find("Pinky(Clone)") ? GameObject.Find("Pinky(Clone)"): GameObject.Find("Pinky 1(Clone)");
 		inky = GameObject.Find("Inky(Clone)") ? GameObject.Find("Inky(Clone)"): GameObject.Find("Inky 1(Clone)");
@@ -144,6 +145,12 @@ public class scoreManager : MonoBehaviour {
            
             liveSprite[lives].SetActive(false);
             lives -= 1;
+			pacman.GetComponent<PlayerMovement> ().restart ();
+			clyde.GetComponent<GhostAI>().restart();
+			pinky.GetComponent<GhostAI>().restart();
+			inky.GetComponent<GhostAI>().restart();
+			blinky.GetComponent<GhostAI>().restart();
+
             if (lives == -1)
             {
                 //game over motherfucker.

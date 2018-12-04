@@ -8,13 +8,18 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour {
 
 	Movement move;
-
+	Vector3 initialPosition;
 	// Use this for initialization
 	void Start () {
 		move = GetComponent<Movement> ();
-
+		initialPosition = transform.position;
+		move._dir = Movement.Direction.still;
 	}
-	
+
+
+	public void restart(){
+		transform.position = initialPosition;
+	}
 	// Update is called once per frame
 	void Update () {
 
