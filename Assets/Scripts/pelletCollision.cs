@@ -13,6 +13,11 @@ public class pelletCollision : MonoBehaviour {
 
     private GameObject gameManager;
 
+    public AudioClip pellet;
+    public AudioClip eatGhost;
+
+    AudioSource aud;
+
     private void Start()
     {
         gameManager = GameObject.Find("GameManager");
@@ -20,17 +25,21 @@ public class pelletCollision : MonoBehaviour {
 		pinky = GameObject.Find("Pinky(Clone)") ? GameObject.Find("Pinky(Clone)"): GameObject.Find("Pinky 1(Clone)");
 		inky = GameObject.Find("Inky(Clone)") ? GameObject.Find("Inky(Clone)"): GameObject.Find("Inky 1(Clone)");
 		blinky = GameObject.Find("Blinky(Clone)") ? GameObject.Find("Blinky(Clone)"): GameObject.Find("Blinky 1(Clone)");
+        aud = GetComponent<AudioSource>();
+        aud.clip = pellet;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 		if (collision.tag == "pellet") {
+            aud.Play();
 			Destroy (collision.gameObject);
 			gameManager.SendMessage("updateScore");
 		}
 
         if (collision.tag == "powerpellet")
         {
+            aud.Play();
             Destroy(collision.gameObject);
             gameManager.SendMessage("updateState");
             for(int i = 0; i < 5; i++)
@@ -78,10 +87,20 @@ public class pelletCollision : MonoBehaviour {
 				collision.GetComponent<GhostAI> ().fleeing = false;
 				collision.GetComponent<Movement> ().MSpeed = 7.5f;
 				collision.gameObject.GetComponent<CircleCollider2D> ().enabled = false;
+                StartCoroutine("EatGhost");
                 //set state to path find back to start
             }
         }
     }
 
+    IEnumerator EatGhost()
+    {
+        Time.timeScale = 0f;
+        aud.clip = eatGhost;
+        aud.Play();
+        yield return new WaitForSecondsRealtime(.8f);
+        aud.clip = pellet;
+        Time.timeScale = 1f;
+    }
 
 }

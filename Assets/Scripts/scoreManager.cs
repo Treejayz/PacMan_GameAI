@@ -23,9 +23,18 @@ public class scoreManager : MonoBehaviour {
     private int ghostCount = 0;
     private float timer = 9f;
     private bool blinking = false;
+
+    public AudioClip start;
+    public AudioClip ghostChase;
+    public AudioClip ghostRun;
+    public AudioClip pacmanDie;
+
+    AudioSource aud;
+
 	// Use this for initialization
 	void Start ()
     {
+        aud = GetComponent<AudioSource>();
         score = 0;
         newlife = 0;
         lives = 4;
@@ -49,6 +58,8 @@ public class scoreManager : MonoBehaviour {
 		pinky = GameObject.Find("Pinky(Clone)") ? GameObject.Find("Pinky(Clone)"): GameObject.Find("Pinky 1(Clone)");
 		inky = GameObject.Find("Inky(Clone)") ? GameObject.Find("Inky(Clone)"): GameObject.Find("Inky 1(Clone)");
 		blinky = GameObject.Find("Blinky(Clone)") ? GameObject.Find("Blinky(Clone)"): GameObject.Find("Blinky 1(Clone)");
+
+        StartCoroutine("Begin");
     }
 
     private void Update()
@@ -74,6 +85,8 @@ public class scoreManager : MonoBehaviour {
 			}
             if(timer <= 0f)
             {
+                aud.clip = ghostRun;
+                aud.Play();
                 powerPellet = false;
                 timer = 9f;
                 ghostCount = 0;
@@ -145,11 +158,8 @@ public class scoreManager : MonoBehaviour {
            
             liveSprite[lives].SetActive(false);
             lives -= 1;
-			pacman.GetComponent<PlayerMovement> ().restart ();
-			clyde.GetComponent<GhostAI>().restart();
-			pinky.GetComponent<GhostAI>().restart();
-			inky.GetComponent<GhostAI>().restart();
-			blinky.GetComponent<GhostAI>().restart();
+
+            StartCoroutine("Die");
 
             if (lives == -1)
             {
@@ -202,6 +212,8 @@ public class scoreManager : MonoBehaviour {
     {
         powerPellet = true;
 		timer = 9f;
+        aud.clip = ghostRun;
+        aud.Play();
     }
 
     private void OnDestroy()
@@ -213,5 +225,40 @@ public class scoreManager : MonoBehaviour {
         }
     }
 
+    IEnumerator Begin()
+    {
+        Time.timeScale = 0f;
+        aud.clip = start;
+        aud.loop = false;
+        aud.Play();
+        yield return new WaitForSecondsRealtime(4.5f);
+        Time.timeScale = 1f;
+        aud.loop = true;
+        aud.clip = ghostChase;
+        aud.Play();
+    }
+
+    IEnumerator Die()
+    {
+        Time.timeScale = 0f;
+        aud.clip = pacmanDie;
+        aud.loop = false;
+        aud.Play();
+        yield return new WaitForSecondsRealtime(3f);
+        if (lives >= 0)
+        {
+            Restart();
+            StartCoroutine("Begin");
+        }
+    }
+
+    void Restart()
+    {
+        pacman.GetComponent<PlayerMovement>().restart();
+        clyde.GetComponent<GhostAI>().restart();
+        pinky.GetComponent<GhostAI>().restart();
+        inky.GetComponent<GhostAI>().restart();
+        blinky.GetComponent<GhostAI>().restart();
+    }
 
 }
